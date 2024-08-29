@@ -199,8 +199,10 @@ class Profanity:
 
         # Final check
         if cur_word != "" and skip_index < len(text) - 1:
-            if cur_word.lower() in self.CENSOR_WORDSET:
-                cur_word = get_replacement_for_swear_word(censor_char)
+            for censor_word in self.CENSOR_WORDSET:
+                if cur_word.lower() in self.CENSOR_WORDSET:
+                    censor_word.censored_word = cur_word
+                    cur_word = get_replacement_for_swear_word(censor_char)
             censored_text += cur_word
         return censored_text
 

@@ -17,6 +17,7 @@ class VaryingString:
         # substitutions.
         self._min_len = 0
         self._max_len = 0
+        self.censored_word = ""
 
         # Create list of all possible character combinations.
         self._char_combos = []
